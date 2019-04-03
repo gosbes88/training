@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="17.282" height="31.1759" viewBox="0 0 17.282 31.1759">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #22c000;
+        stroke-linecap: round;
+        stroke-width: 4.5px;
+      }
+    </style>
+  </defs>
+  <title>slider-arrow-left-green</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <polyline class="cls-1" points="15.032 2.25 3.027 15.588 15.032 28.926"/>
+    </g>
+  </g>
+</svg>

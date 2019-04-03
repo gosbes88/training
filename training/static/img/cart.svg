@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10.5 13.5">
+  <defs>
+    <style>
+      .cart {
+          fill: #bfbfbf;
+      }
+    </style>
+  </defs>
+
+    <path class="cart" d="M10.5.75H7.875L7.125,0H3.375l-.75.75H0v1.5H10.5ZM.75,12a1.5044,1.5044,0,0,0,1.5,1.5h6A1.5044,1.5044,0,0,0,9.75,12V3h-9Z"/>
+</svg>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 121.5 121.5">
+    <defs>
+        <style>
+            .cls-1,
+            .cls-2 {
+                fill: none;
+                stroke: #ccc;
+            }
+
+            .cls-1 { stroke-width: 9px; }
+
+            .cls-2 {
+                stroke-linecap: round;
+                stroke-width: 11px;
+            }
+        </style>
+    </defs>
+    <title>pause-clock</title>
+    <g id="Layer_2" data-name="Layer 2">
+        <g id="Layer_1-2" data-name="Layer 1">
+            <path class="cls-1" d="M60.75,117A56.25,56.25,0,1,0,4.5,60.75,56.31,56.31,0,0,0,60.75,117Z"/>
+            <line class="cls-2" x1="60.75" y1="60.89" x2="60.75" y2="27.19"/>
+            <line class="cls-2" x1="60.61" y1="60.61" x2="80.89" y2="80.89"/>
+        </g>
+    </g>
+</svg>

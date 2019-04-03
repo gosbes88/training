@@ -1,0 +1,280 @@
+// Иконки
+.search-close-icon--ind {
+    right: 0;
+    bottom: 1px;
+}
+
+.arrow-left-white-icon {
+    width: 6px;
+    height: 11px;
+    display: block;
+    background: url("@{images}/arrow-left-white.svg");
+}
+
+.remove-icon,
+.delete-icon {
+    width: 14px;
+    height: 14px;
+    display: block;
+    background-repeat: no-repeat;
+    cursor: pointer;
+
+    &--big {
+        width: 22px;
+        height: 24px;
+    }
+}
+
+.remove-icon {
+    .mixinImageSvgName(garbage);
+
+    &--green {
+        .mixinImageSvgName(garbage-green);
+    }
+}
+
+.edit-btn-icon {
+    width: 14px;
+    height: 14px;
+    display: block;
+    background: url("@{images}/pencil-edit.svg");
+}
+
+.loading-elem-icon {
+    width: 15px;
+    height: 16px;
+    display: inline-block;
+    background: url("@{images}/loading.svg");
+}
+
+.arrow-green-bottom-icon {
+    width: 6px;
+    height: 6px;
+    display: inline-block;
+    background: url("@{images}/select-arrow.svg");
+}
+
+.settings-icon {
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    background: url("@{images}/settings.svg");
+}
+
+.status-red-icon {
+    display: inline-block;
+    width: 18px;
+    height: 22px;
+    background: url("@{images}/status.svg") no-repeat;
+}
+
+.status-yellow-icon {
+    display: inline-block;
+    width: 18px;
+    height: 22px;
+    background: url("@{images}/status-yellow.svg") no-repeat;
+}
+
+.status-green-icon {
+    display: inline-block;
+    width: 18px;
+    height: 22px;
+    background: url("@{images}/status-green.svg") no-repeat;
+}
+
+.check-icon {
+    display: inline-block;
+    width: 14px;
+    height: 11px;
+}
+
+.found-icon {
+    display: block;
+    width: 19px;
+    height: 16px;
+    background: url("@{images}/briefcase.svg") no-repeat;
+}
+
+.sort-icon {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: url("@{images}/sort.svg") no-repeat;
+    cursor: pointer;
+}
+
+.more-icon {
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    background: url("@{images}/more.svg") no-repeat;
+    cursor: pointer;
+}
+
+.analysis-icon,
+.checked-icon,
+.multiple-users-icon {
+    display: block;
+    width: 16px;
+    height: 16px;
+}
+
+.size-checkbox-small {
+    .mixinBlockSize(14px);
+
+    display: block;
+}
+
+.add-element-icon,
+.text-left-icon,
+.text-center-icon,
+.text-right-icon,
+.text-bold-icon,
+.text-italics-icon,
+.text-link-icon,
+.text-strikethrough-icon,
+.image-align-left,
+.image-align-center,
+.image-align-right,
+.quiz-mode-simple,
+.quiz-mode-complex,
+.size-checkbox-middle,
+.position-center-icon,
+.position-left-icon,
+.position-right-icon,
+.direction-column-icon,
+.radio-button-icon,
+.check-button-icon {
+    .mixinBlockSize(18px);
+
+    display: block;
+}
+
+.size-checkbox-big,
+.plus-green-icon {
+    .mixinBlockSize(26px);
+
+    display: block;
+}
+
+.add-element-icon {
+    .mixinImageSvgName(add-element);
+}
+
+.add-column-icon {
+    .mixinImageSvgName(column);
+
+    width: 28px;
+    height: 26px;
+    display: block;
+}
+
+.add-row-icon {
+    .mixinImageSvgName(row);
+
+    width: 24px;
+    height: 28px;
+    display: block;
+}
+
+.text-left-icon {
+    .mixinImageSvgName(align-to-left);
+}
+
+.text-center-icon {
+    .mixinImageSvgName(center-text-alignment);
+}
+
+.text-right-icon {
+    .mixinImageSvgName(align-to-right);
+}
+
+.text-bold-icon {
+    .mixinImageSvgName(bold-text);
+}
+
+.text-italics-icon {
+    .mixinImageSvgName(italicize-text);
+}
+
+.image-align-left {
+    .mixinImageSvgName(image-align-left);
+}
+
+.image-align-center {
+    .mixinImageSvgName(image-align-center);
+}
+
+.image-align-right {
+    .mixinImageSvgName(image-align-right);
+}
+
+.row-align-top-icon,
+.row-align-bottom-icon,
+.row-align-center-icon {
+    width: 30px;
+    height: 23px;
+    display: block;
+}
+
+.row-align-top-icon {
+    .mixinImageSvgName(row-align-top);
+}
+
+.row-align-center-icon {
+    .mixinImageSvgName(row-align-center);
+}
+
+.row-align-bottom-icon {
+    .mixinImageSvgName(row-align-bottom);
+}
+
+.quiz-mode-simple {
+    .mixinImageSvgName(wizard);
+}
+
+.quiz-mode-complex {
+    .mixinImageSvgName(graph);
+}
+
+.size-checkbox-big,
+.size-checkbox-middle,
+.size-checkbox-small {
+    .mixinImageSvgName(size-checkbox);
+}
+
+.direction-column-icon {
+    .mixinImageSvgName(direction-column);
+}
+
+.position-center-icon {
+    .mixinImageSvgName(position-center);
+}
+
+.position-left-icon {
+    .mixinImageSvgName(position-left);
+}
+
+.position-right-icon {
+    .mixinImageSvgName(position-right);
+}
+
+.check-blue-icon {
+    .mixinImageSvgName(check-blue);
+}
+
+.check-black-icon {
+    .mixinImageSvgName(check-black);
+}
+
+.plus-green-icon {
+    .mixinImageSvgName(plus-green);
+}
+
+.radio-button-icon {
+    .mixinImageSvgName(radio-button);
+}
+
+.check-button-icon {
+    .mixinImageSvgName(check-button);
+}

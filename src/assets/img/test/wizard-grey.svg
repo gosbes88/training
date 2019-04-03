@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <style>.cls-1{fill:none;stroke:#ccc;stroke-linecap:round;stroke-linejoin:round;stroke-width:30px;}</style>
+    </defs>
+    <title/>
+    <g data-name="wizard" id="_wizard">
+        <polygon class="cls-1" points="413 140.07 413 435 123 435 123 63 335.93 63 413 140.07"/>
+        <rect class="cls-1" height="67.55" width="67.55" x="170.5" y="191.23"/>
+        <line class="cls-1" x1="277.5" x2="365.5" y1="225" y2="225"/>
+        <rect class="cls-1" height="67.55" width="67.55" x="170.5" y="311.71"/>
+        <line class="cls-1" x1="277.5" x2="365.5" y1="345.48" y2="345.48"/>
+        <polyline class="cls-1" points="413 140.07 335.93 140.07 335.93 63"/>
+    </g>
+</svg>

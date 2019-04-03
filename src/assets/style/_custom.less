@@ -1,0 +1,721 @@
+
+@activeBlockColor: #ff4d4d;
+
+//загрузка файлов
+.upload {
+    width: 100%;
+    color: @gray;
+
+    .text-link {
+        text-transform: none;
+    }
+}
+
+.el-upload-dragger {
+    .mixinBlockSize(100%);
+    .mixinCenterFlex();
+
+    flex-direction: column;
+    border-color: @gray !important;
+
+    &.is-dragover {
+        border: 2px dashed @darkGreen;
+    }
+}
+
+.el-upload {
+    .mixinBlockSize(100%);
+
+    &__input {
+        display: none !important;
+    }
+}
+
+.el-upload-list {
+    &.el-upload-list--picture-card {
+        .block-center(center);
+
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+.el-upload--picture-card {
+    line-height: 50px;
+}
+
+.el-upload--picture-card:hover,
+.el-upload:focus {
+    color: inherit;
+    border-color: transparent;
+}
+
+.el-upload-list--picture-card {
+    .el-upload-list__item {
+        .mixinBlockSize(auto);
+
+        max-width: 100%;
+        margin-right: 0;
+    }
+}
+
+.el-upload-list__item.is-success .el-upload-list__item-status-label {
+    display: none;
+}
+
+.el-icon-delete::before {
+    .mixinBlockSize(40px);
+
+    content: '\0274c';
+    display: block;
+    text-align: center;
+    vertical-align: middle;
+    color: #6fbe10 !important;
+}
+
+.upload-icon-el {
+    .mixinBlockSize(100px);
+
+    background: url("@{images}/upload-dark.svg") no-repeat center;
+    background-size: 100px 100px !important;
+}
+
+// страница конструктор
+.mixinDesignerInd(@ind: 10px) {
+    padding: @ind;
+}
+
+.flex-center {
+    .empty-actions {
+        padding-left: 5px;
+    }
+
+    width: 100%;
+}
+
+// когда блок пустой то добавляется этот класс
+.block-empty {
+    .mixinBackgroundSize(8px 8px);
+    .mixinPatternGradient();
+
+    width: 100%;
+    padding: 2.25em 1.6875em;
+
+    &__title {
+        color: @textLight;
+    }
+}
+
+.designer-editor {
+    display: grid;
+    grid-template-rows: 1fr auto;
+
+    &__main {
+        .mixinScrollBar();
+
+        position: relative;
+        height: @designerEditorHeight;
+        margin-top: @designerEditorInd;
+        margin-bottom: @designerEditorInd;
+        padding-right: @designerEditorInd;
+        padding-left: @designerEditorInd;
+
+        &--ind {
+            margin-right: 5px;
+            padding-right: 10px;
+        }
+    }
+
+    &__nav {
+        border-top: 1px solid @brColor;
+    }
+}
+
+.constructor-main,
+.designer-main {
+    position: relative;
+
+    &:hover {
+        .designer-wrapper {
+            .mixinVisible();
+        }
+
+        //.block-selected {
+        //    &:hover {
+        //        z-index: 3;
+        //        background-color: @bgLight;
+        //    }
+        //}
+    }
+}
+
+// создание строки
+.block-row {
+    display: flex;
+    flex: 1;
+
+    &:not(:last-child) {
+        margin-bottom: 8px;
+    }
+}
+
+.mixinBlockColumn() {
+    display: flex;
+    flex: 1;
+    padding: 10px;
+    margin-left: -2px;
+}
+
+.block-column,
+.block-column-prepared {
+    .mixinBlockColumn();
+}
+
+// колонки (конструктор)
+.block-column {
+    width: 100%;
+    position: relative;
+    border: 2px dotted @brDarkColor;
+
+    &--active {
+        position: relative;
+        z-index: 2;
+        border-color: @activeBlockColor;
+    }
+}
+
+// колонки (проверка)
+.block-column-prepared {
+    border: 2px dotted transparent;
+}
+
+// подсвечивает блоки
+.constructor-main {
+    position: relative;
+}
+
+.designer-wrapper {
+    .mixinContentWrapper(absolute, 2, 0.1);
+    .mixinHidden();
+}
+
+.mixinOutline(@size: 2px, @color: @green) {
+    outline: @size solid @color;
+}
+
+.block-selected {
+    border: 2px dotted @brDarkColor;
+
+    &:hover {
+        background-color: @bgSelection;
+    }
+
+    // активный блок
+    &--active {
+        border-color: @activeBlockColor;
+    }
+}
+
+.block-paragraph {
+    .mixinScrollBar();
+
+    &__drag {
+        cursor: grab;
+    }
+}
+
+
+// показывает границы
+.br-show {
+    .mixinOutline();
+
+    outline-offset: -3px;
+}
+
+// создание картинки
+.block-image {
+    overflow: hidden;
+
+    &__img-wrap {
+        position: relative;
+    }
+
+    &__img {
+        .mixinBlockSize(100%);
+
+        max-width: 100%;
+        display: block;
+        //object-fit: contain;
+    }
+
+    &__checkbox {
+        .mixinBlockSize(50%);
+
+        background: url("@{images}/employee-selection.svg") no-repeat center;
+        content: "";
+        position: absolute;
+        top: 25%;
+        left: 25%;
+    }
+
+    &__checkbox--small {
+        .mixinBlockSize(20%);
+        top: 50%;
+        left: 50%;
+    }
+
+    &__checkbox--big {
+        .mixinBlockSize(80%);
+        top: 10%;
+        left: 10%;
+    }
+
+    .checkbox--blue {
+        background: url("@{images}/employee-selection-blue.svg") no-repeat center;
+    }
+
+    .checkbox--black {
+        background: url("@{images}/employee-selection-black.svg") no-repeat center;
+    }
+}
+
+// панель инструментов
+.designer-toolbar {
+    display: flex;
+    align-items: center;
+
+    &__item {
+        &:not(:last-child) {
+            margin-right: 10px;
+        }
+    }
+
+    &__link {
+        display: block;
+    }
+}
+
+// Общая навигация пользователя
+.designer-nav {
+    height: 59px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    background-color: #f7f7f7;
+
+    &__item {
+        &:not(:last-child) {
+            margin-right: 20px;
+        }
+    }
+}
+
+//блок отображения имени шаблона
+.quiz-name {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &__title {
+        .mixinTextOverflow();
+
+        margin-right: 10px;
+    }
+
+    &__title-link {
+        .mixinTextOverflow();
+    }
+
+    &__inp {
+        margin: 0;
+        padding: 0;
+        border: none;
+        background: transparent;
+        font-weight: bold;
+    }
+}
+
+// Колонка настройки элементов
+.editor-settings {
+    .mixinScrollBar();
+
+    height: @editorSettingsHeight;
+    padding: 30px;
+
+    &__title {
+        margin: 0 0 10px;
+        font-size: @fontSizeM;
+    }
+
+    &__title-small {
+        margin: 0 0 10px;
+        font-size: @fontSizeXS;
+        color: @textLight;
+    }
+}
+
+// Настройки текста
+.text-toolbar,
+.row-toolbar,
+.size-toolbar,
+.checkbox-color,
+.position-toolbar,
+.group-toolbar,
+.group-mode,
+.block-direction {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__item {
+        &:not(:last-child) {
+            margin-right: 10px;
+        }
+    }
+
+    &__icon {
+        filter: grayscale(1);
+        transition: 150ms;
+
+        &:hover,
+        &--active {
+            filter: grayscale(0);
+        }
+    }
+}
+
+//Настройки блока выбора группы
+.group-toolbar {
+    &__item {
+        cursor: pointer;
+        color: @textLinkGreen;
+        width: 18px;
+        font-size: 18px;
+    }
+}
+
+// Настройки блока выбора размеров чекбокса
+.size-toolbar,
+.group-toolbar {
+    align-items: center;
+}
+
+//настройки блока выбора цвета курсора
+.checkbox-color {
+    &__item {
+        .mixinBlockSize(20px);
+
+        border-radius: 50%;
+        border: 2px solid transparent;
+        transition: 150ms;
+
+        &:hover,
+        &--active {
+            border-color: #ff4d4d;
+        }
+    }
+
+    &__green {
+        background-color: #6fbd10;
+    }
+
+    &__blue {
+        background-color: #4285f4;
+    }
+
+    &__black {
+        background-color: #000000;
+    }
+}
+
+
+@media(max-width: 1024px) {
+    .text-toolbar {
+        &__item {
+            margin-bottom: 10px;
+        }
+    }
+
+    .select-font-size {
+        .select-list {
+            left: 0;
+        }
+    }
+}
+
+.image-align {
+    &:extend(.text-toolbar all);
+}
+
+.disabled {
+    filter: grayscale();
+}
+
+// Страница списка тестов (Конструктор)
+
+.quiz-list {
+    .flex-display();
+    .flex-direction(column);
+
+    &__item {
+        .mixinLoadContentAnim();
+
+        border-bottom: 1px solid @brColor;
+        cursor: pointer;
+
+        &--selected,
+        &:hover {
+            background: @bgSelection;
+        }
+    }
+}
+
+.quiz-item {
+    @quizItemInd: 0 20px;
+
+    .flex-display();
+    align-items: center;
+    justify-content: space-between;
+    min-height: 78px;
+    padding: 0 20px;
+
+    &__info {
+        .flex(1 1 auto);
+    }
+
+    &__name {
+        .mixinWordBreak();
+
+        margin: 0;
+        font-size: @fontSizeM;
+        font-weight: bold;
+    }
+
+    &__desc {
+        .mixinWordBreak();
+
+        font-size: @fontSizeXS;
+    }
+
+    &__questions {
+        color: @textLight;
+    }
+
+    &__mode,
+    &__selected {
+        .flex(0 0 20px);
+    }
+
+    &__mode {
+        margin-right: 20px;
+    }
+}
+
+//Область медиахранилища
+.media-storage {
+    a {
+        cursor: pointer;
+    }
+}
+
+.viewer {
+    .mixinScrollBar();
+
+    height: @pageHeight;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 10px;
+    padding-left: 10px;
+
+    &--height {
+        height: @viewerHeight;
+    }
+}
+
+.image-wrapper {
+    .image {
+        display: flex;
+        border: 1px solid #ebebeb;
+        border-radius: 10px;
+        margin: 0 10px 10px 0;
+        width: 300px;
+        height: 200px;
+    }
+
+    .delete-icon {
+        .mixinHidden();
+
+        position: absolute;
+        top: 8px;
+        right: 8px;
+    }
+
+    .plus-wrap {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        cursor: pointer;
+    }
+
+    .plus-green-icon {
+        .mixinBlockSize(50px);
+        .mixinCenterBlockAbsolute();
+        .mixinHidden();
+
+        transform: scale(0);
+    }
+
+    &:hover {
+        .delete-icon {
+            .mixinVisible();
+        }
+
+        .plus-green-icon {
+            .mixinVisible();
+
+            transform: scale(1);
+        }
+    }
+}
+
+@supports(display: grid) {
+    .viewer {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        grid-gap: 20px;
+        padding: 20px;
+        grid-auto-rows: 220px;
+    }
+
+    .image-wrapper {
+        .image {
+            .mixinBlockSize(100%);
+
+            margin: 0;
+            object-fit: cover;
+        }
+    }
+}
+
+// блок интерактивные настройки
+.interactive-settings {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    justify-content: space-between;
+
+    &__col {
+        position: relative;
+    }
+
+    @media(max-width: @tabletGridWidth) {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.text-settings {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr auto;
+    justify-content: space-between;
+    grid-gap: 20px;
+
+    &__col {
+        &:nth-child(1) {
+            grid-column: ~'1/3';
+        }
+
+        &:nth-child(2) {
+            width: 127px;
+        }
+
+        &:nth-child(3) {
+            width: 27px;
+        }
+
+        &:nth-child(4) {
+            grid-column: ~'1/5';
+        }
+    }
+}
+
+@media(max-width: @tabletGridWidth) {
+    .text-settings {
+        .mixinGraphicsTabletGrid();
+    }
+
+    .text-settings__col:nth-child(4) {
+        grid-column: inherit;
+    }
+}
+
+@tabletGridWidth: 1080px;
+
+.mixinGraphicsTabletGrid() {
+    @media(max-width: @tabletGridWidth) {
+        grid-template-columns: 1fr;
+        grid-row-gap: 20px;
+        grid-auto-flow: row;
+        grid-column-gap: inherit;
+    }
+}
+
+// Настройки свойств строк
+.row-settings {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    grid-column-gap: 20px;
+
+    &__col {
+        &:nth-child(1) {}
+
+        @media(max-width: @tabletGridWidth) {
+            grid-column: auto;
+        }
+    }
+
+    .mixinGraphicsTabletGrid();
+}
+
+.basic-item-settings {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+    grid-auto-flow: column;
+    justify-content: flex-start;
+
+    .mixinGraphicsTabletGrid();
+
+    &--3-columns {
+        grid-template-columns: repeat(3, 1fr);
+
+        .mixinGraphicsTabletGrid();
+    }
+}
+
+.settings-image {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    &__col {
+        &:nth-child(1) {
+            flex: 1 1 100%;
+            order: 3;
+        }
+
+        &:nth-child(2),
+        &:nth-child(3) {
+            flex: 1 1 ~'calc(50% - 10px)';
+        }
+
+        &:nth-child(2) {
+            margin-right: 10px;
+        }
+
+        &:nth-child(3) {
+            margin-left: 10px;
+        }
+    }
+}

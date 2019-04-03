@@ -1,0 +1,51 @@
+// Mixins
+.scrollbar(@ScbWidth: 6px, @ScbBg: #ededed, @ScbRadius: 6px, @thumbBg: #999) {
+    &::-webkit-scrollbar {
+        width: @ScbWidth;
+        background: @ScbBg;
+        border-radius: @ScbRadius;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: @thumbBg;
+        border-radius: @ScbRadius;
+    }
+
+    &::-webkit-scrollbar:horizontal {
+        height: @ScbWidth;
+    }
+
+    &::-webkit-scrollbar-thumb:horizontal {
+        background: @thumbBg;
+        border-radius: @ScbRadius;
+    }
+
+    -webkit-overflow-scrolling: touch;
+}
+
+
+// стрелка в тултипе
+.mixinTooltipArrow(@arrowSize: 18px; @side: bottom; @brLine1: bottom; @brLine2: right; ) {
+    position: absolute;
+    left: ~"calc(100%/2 - @{arrowSize}/2)";
+    @{side}: ~"calc(-@{arrowSize}/2)";
+
+    background: @bgLight;
+    border-@{brLine1}: 1px solid @brColor;
+    border-@{brLine2}: 1px solid @brColor;
+    width: @arrowSize;
+    height: @arrowSize;
+
+    .rotate(45deg);
+}
+
+// базовая заготовка отображения тултипа
+.mixinTooltipContent(@padding: 20px; @boxShadow: 22px; @boxShadowY: 0; @borderRadius: 12px) {
+    position: absolute;
+    z-index: 99;
+    padding: @padding;
+    border: 1px solid @brColor;
+    background: @bgLight;
+    border-radius: @borderRadius;
+    box-shadow: 0 @boxShadowY @boxShadow rgba(0,0,0, .3);
+}

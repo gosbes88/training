@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+    <defs>
+        <style>.clock{ fill: #999; }</style>
+    </defs>
+    <g>
+        <path class="clock" d="M10,18a8,8,0,1,1,8-8,8,8,0,0,1-8,8M10,0A10,10,0,1,0,20,10,10,10,0,0,0,10,0"/>
+        <polygon class="clock" points="10.5 5 9 5 9 11 14.25 14.15 15 12.92 10.5 10.25 10.5 5"/>
+    </g>
+</svg>
